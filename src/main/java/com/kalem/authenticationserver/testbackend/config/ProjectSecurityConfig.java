@@ -10,16 +10,16 @@ import org.springframework.security.web.SecurityFilterChain;
 public class ProjectSecurityConfig {
 
     @Bean
-    SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+    SecurityFilterChain defaultSecurityFilterChain( HttpSecurity http ) throws Exception {
 
         /**
          *  Below is the custom security configurations
          */
 
-        http.authorizeHttpRequests((requests) -> requests.requestMatchers("/myAccount","/myBalance","/myLoans","/myCards").authenticated()
-                        .requestMatchers("/notices","/contact").permitAll())
-                .formLogin(Customizer.withDefaults())
-                .httpBasic(Customizer.withDefaults());
+        http.authorizeHttpRequests( requests -> requests.requestMatchers( "/myAccount", "/myBalance", "/myLoans", "/myCards" ).authenticated()
+                        .requestMatchers( "/notices", "/contact" ).permitAll() )
+                .formLogin( Customizer.withDefaults() )
+                .httpBasic( Customizer.withDefaults() );
         return http.build();
 
         /**
