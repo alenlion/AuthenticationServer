@@ -1,1 +1,0 @@
-package com.kalem.authenticationserver.basemodels;import lombok.Getter;import lombok.Setter;@Getter@Setterpublic abstract class CreatedByWithStatusDto<I extends Number> extends CreatedByDto<I> {    private StatusType status;    private String statusDesc;}

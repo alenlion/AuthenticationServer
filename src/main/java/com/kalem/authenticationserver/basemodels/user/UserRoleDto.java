@@ -1,9 +1,9 @@
 package com.kalem.authenticationserver.basemodels.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.kalem.basemodels.CreatedByDto;
-import com.kalem.basemodels.RoleDto;
-import com.kalem.enums.RecordStatusType;
+import com.kalem.sharedclass.basemodels.CreatedByDto;
+import com.kalem.sharedclass.basemodels.RoleDto;
+import com.kalem.sharedclass.enums.RecordStatusType;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import lombok.Getter;
 import lombok.Setter;

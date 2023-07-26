@@ -1,16 +1,12 @@
 package com.kalem.authenticationserver.basemodels.user;
 
-import com.kalem.basemodels.CreatedByEntity;
-import com.kalem.basemodels.IDEntity;
+import com.kalem.sharedclass.basemodels.CreatedByEntity;
+import com.kalem.sharedclass.basemodels.IDEntity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.*;
-import org.hibernate.annotations.Cache;
 
 import javax.persistence.*;
-import javax.persistence.Entity;
-import javax.persistence.Index;
-import javax.persistence.Table;
 
 @Data
 @EqualsAndHashCode

@@ -1,21 +1,17 @@
 package com.kalem.authenticationserver.basemodels.user;
 
-import com.kalem.basemodels.CreatedByEntity;
-import com.kalem.basemodels.IDEntity;
-import com.kalem.enums.ECommerceUserType;
-import com.kalem.enums.LocalizationType;
-import com.kalem.enums.UserStatusType;
-import com.kalem.enums.UserType;
+import com.kalem.sharedclass.basemodels.CreatedByEntity;
+import com.kalem.sharedclass.basemodels.IDEntity;
+import com.kalem.sharedclass.enums.ECommerceUserType;
+import com.kalem.sharedclass.enums.LocalizationType;
+import com.kalem.sharedclass.enums.UserStatusType;
+import com.kalem.sharedclass.enums.UserType;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.*;
-import org.hibernate.annotations.Cache;
 
 import javax.persistence.*;
-import javax.persistence.Entity;
-import javax.persistence.Index;
-import javax.persistence.Table;
 import java.util.Collection;
 import java.util.Date;
 
@@ -89,18 +85,18 @@ public class UserEntity extends CreatedByEntity<Integer> {
     @Column(name = "LANG_TYPE", nullable = false, length = 5)
     private LocalizationType localization = LocalizationType.tr_TR;
 
-    @Type( type = "com.kalem.enums.UserStatusTypeValue" )
+    @Type( type = "com.kalem.sharedclass.enums.UserStatusTypeValue" )
     @Column( name = "STATUS", columnDefinition = "smallint", nullable = false, length = 1 )
     private UserStatusType status;
 
     @Column(name = "LOGIN_DEVICE", length = 100)
     private String loginDevice;
 
-    @Type( type = "com.kalem.enums.ECommerceUserTypeValue" )
+    @Type( type = "com.kalem.sharedclass.enums.ECommerceUserTypeValue" )
     @Column( name = "TYPE", columnDefinition = "smallint", length = 1 )
     private ECommerceUserType type;
 
-    @Type( type = "com.kalem.enums.UserTypeValue" )
+    @Type( type = "com.kalem.sharedclass.enums.UserTypeValue" )
     @Column( name = "USER_TYPE", columnDefinition = "smallint", length = 1 )
     private UserType userType;
 

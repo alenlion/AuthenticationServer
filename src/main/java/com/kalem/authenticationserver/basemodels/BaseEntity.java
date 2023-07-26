@@ -1,7 +1,7 @@
 package com.kalem.authenticationserver.basemodels;
 
 
-import com.kalem.enums.DeletedType;
+import com.kalem.sharedclass.enums.DeletedType;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.DynamicInsert;
@@ -33,16 +33,10 @@ public abstract class BaseEntity implements Cloneable, Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "MODIFY_DATE", nullable = false)
     @LastModifiedDate
-    @Version
     private Date modifiedDate = new Date();
 
-    @Type( type = "com.kalem.enums.DeletedTypeValue" )
+    @Type( type = "com.kalem.sharedclass.enums.DeletedTypeValue" )
     @Column( name = "DELETED", columnDefinition = "smallint", nullable = false, length = 1 )
     private DeletedType deleted = DeletedType.FALSE;
 
-    protected void clone(BaseEntity model) throws CloneNotSupportedException {
-        model.setCreatedDate(this.getCreatedDate());
-        model.setModifiedDate(this.getModifiedDate());
-        model.setDeleted(this.getDeleted());
-    }
 }

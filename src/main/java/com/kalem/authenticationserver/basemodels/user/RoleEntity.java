@@ -1,16 +1,13 @@
 package com.kalem.authenticationserver.basemodels.user;
 
-import com.kalem.basemodels.CreatedByWithStatusEntity;
-import com.kalem.basemodels.IDEntity;
-import com.kalem.enums.RoleType;
-import com.kalem.enums.UserRoleType;
+import com.kalem.sharedclass.basemodels.CreatedByWithStatusEntity;
+import com.kalem.sharedclass.basemodels.IDEntity;
+import com.kalem.sharedclass.enums.RoleType;
+import com.kalem.sharedclass.enums.UserRoleType;
 import lombok.Data;
 import org.hibernate.annotations.*;
 
 import javax.persistence.*;
-import javax.persistence.Entity;
-import javax.persistence.Index;
-import javax.persistence.Table;
 
 @Data
 @Entity
@@ -43,11 +40,11 @@ public class RoleEntity extends CreatedByWithStatusEntity<Integer> {
     @Column( name = "DESCRIPTION", length = 50 )
     private String description;
 
-    @Type( type = "com.kalem.enums.UserRoleTypeValue" )
+    @Type( type = "com.kalem.sharedclass.enums.UserRoleTypeValue" )
     @Column( name = "TYPE", columnDefinition = "smallint", nullable = false, length = 1 )
     private UserRoleType type;
 
-    @Type( type = "com.kalem.enums.RoleTypeValue" )
+    @Type( type = "com.kalem.sharedclass.enums.RoleTypeValue" )
     @Column( name = "ROLE_TYPE", columnDefinition = "smallint", length = 1 )
     private RoleType roleType;
 

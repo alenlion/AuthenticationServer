@@ -1,8 +1,8 @@
 package com.kalem.authenticationserver.basemodels.user;
 
 
-import com.kalem.basemodels.IDDto;
-import com.kalem.enums.ReminderStatusType;
+import com.kalem.sharedclass.basemodels.IDDto;
+import com.kalem.sharedclass.enums.ReminderStatusType;
 import lombok.Getter;
 import lombok.Setter;
 

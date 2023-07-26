@@ -1,8 +1,8 @@
 package com.kalem.authenticationserver.basemodels.user;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.kalem.basemodels.CreatedByWithStatusDto;
-import com.kalem.jsonserializer.JsonSerializerIDescription;
+import com.kalem.sharedclass.basemodels.CreatedByWithStatusDto;
+import com.kalem.sharedclass.jsonserializer.JsonSerializerIDescription;
 import lombok.Getter;
 import lombok.Setter;
 
