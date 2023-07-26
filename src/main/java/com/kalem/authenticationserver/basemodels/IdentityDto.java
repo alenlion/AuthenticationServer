@@ -1,0 +1,1 @@
+package com.kalem.authenticationserver.basemodels;import lombok.Getter;import lombok.Setter;import javax.persistence.MappedSuperclass;@Getter@Setter@MappedSuperclasspublic class IdentityDto extends IDDto<Number> {}

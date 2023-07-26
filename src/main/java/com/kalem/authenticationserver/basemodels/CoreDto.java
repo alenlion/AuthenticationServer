@@ -1,0 +1,1 @@
+package com.kalem.authenticationserver.basemodels;import java.io.Serializable;public abstract class CoreDto implements Serializable {}

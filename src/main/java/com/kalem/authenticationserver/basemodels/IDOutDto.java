@@ -1,0 +1,1 @@
+package com.kalem.authenticationserver.basemodels;import lombok.Data;import javax.xml.bind.annotation.XmlAccessType;import javax.xml.bind.annotation.XmlAccessorType;@Data@XmlAccessorType( XmlAccessType.FIELD )public abstract class IDOutDto<I extends Number> {    private I ID;}
