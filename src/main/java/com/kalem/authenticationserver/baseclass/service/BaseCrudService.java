@@ -9,13 +9,13 @@ import com.kalem.authenticationserver.baseclass.model.CoreEntity;
  */
 
 public interface BaseCrudService<I extends Number, T extends CoreEntity, D extends CoreDto> {
-    public abstract T mapToEntity(D source, String mapId);
+    public abstract T mapToEntity( D source, String mapId );
 
-    public abstract D mapToDto(T source, String mapId);
+    public abstract D mapToDto( T source, String mapId );
 
-    D create( D addressDto );
+    D create( D dto );
 
-    D update( D addressDto );
+    D update( D dto );
 
     D getById( I id );
 
