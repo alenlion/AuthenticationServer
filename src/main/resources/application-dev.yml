@@ -2,9 +2,9 @@ spring:
   application:
     name: authentication-server
   datasource:
-    url: jdbc:sqlserver://127.0.0.1;database=AUTHENTICATION;encrypt=true;trustServerCertificate=true;
-    username: sa
-    password: 123
+    url: jdbc:sqlserver://20.10.10.53\SQL2019;database=AUTHENTICATION;encrypt=true;trustServerCertificate=true;
+    username: kalem
+    password: Kalem1453
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
   jpa:
     
@@ -20,6 +20,6 @@ spring:
         dialect: org.hibernate.dialect.SQLServer2016Dialect
         format_sql: true
 
-
 server:
   port: 8080
+

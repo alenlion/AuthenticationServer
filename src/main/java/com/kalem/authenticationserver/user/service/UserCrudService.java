@@ -6,6 +6,8 @@ import com.kalem.authenticationserver.user.model.UserDto;
 import com.kalem.authenticationserver.user.model.UserEntity;
 import com.kalem.authenticationserver.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,6 +19,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserCrudService implements BaseCrudService<Integer, UserEntity, UserDto> {
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public UserEntity mapToEntity( UserDto source, String mapId ) {
@@ -30,8 +33,19 @@ public class UserCrudService implements BaseCrudService<Integer, UserEntity, Use
 
     @Override
     public UserDto create( UserDto user ) {
-
+        user.setPassword( passwordEncoder.encode( user.getPassword() ) );
         return mapToDto( userRepository.save( mapToEntity( user, "" ) ), "" );
+    }
+
+    public UserDto findFirstByUsername( String username ) {
+
+        var userEntity = userRepository.findFirstByUsername( username );
+
+        if ( userEntity.isPresent() ) {
+            return mapToDto( userEntity.get(), "" );
+        } else {
+            throw new UsernameNotFoundException( "User details not found for the user : " + username );
+        }
     }
 
     @Override
